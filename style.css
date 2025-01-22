@@ -1,0 +1,36 @@
+/* Sidebar Styling */
+.sidebar {
+    background-color: #f8f9fa;
+    padding-top: 20px;
+}
+
+.sidebar .nav-link {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h1.h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
