@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>User Registration Data</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Data rows will go here -->
+            </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="window.location.href='index.html'">Back to Registration</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Fetch user data from localStorage
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            // Check if users exist
+            if (users.length > 0) {
+                let tableBody = $('#userTableBody');
+                users.forEach(user => {
+                    tableBody.append(`
+                        <tr>
+                            <td>${user.username}</td>
+                            <td>${user.email}</td>
+                            <td>${user.password}</td>
+                        </tr>
+                    `);
+                });
+            } else {
+                $('#userTableBody').append('<tr><td colspan="3">No users found.</td></tr>');
+            }
+        });
+    </script>
+</body>
+</html>
